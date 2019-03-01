@@ -8,7 +8,9 @@ h1{
 	text-align: center;
 }
 
-
+.title{
+	margin-top:2.2vw;
+}
 
 .queryBox{
 	text-align:center;
@@ -24,4 +26,8 @@ h1{
 
 .form-group{
 	text-align:center;
+}
+
+.container{
+	margin-top:6vw;
 }
