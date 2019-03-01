@@ -8,6 +8,8 @@ h1{
 	text-align: center;
 }
 
+
+
 .title{
 	margin-top:2.2vw;
 }
@@ -17,7 +19,21 @@ h1{
 }
 
 .topBar{
+	height: 50px;
 	background-color:#5C6BC0;
+}
+
+#settingsIcon{
+	
+	size:200px;
+}
+
+.glyphicon.glyphicon-cog {
+    font-size: 40px;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	color: white;
 }
 
 .panel-title{
