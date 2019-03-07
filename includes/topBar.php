@@ -16,7 +16,7 @@
 	<body>
 
 		<div class="topBar">
-			<img id="logo" src="ImbroglioDevelopmentThinkingDogClothed.png" onclick="window.location.href = 'homePlaceholder.php';" >
+			<img id="logo"  src="ImbroglioDevelopmentThinkingDogClothed.png" onclick="window.location.href = 'homePlaceholder.php';" >
 			<a id="settings" class="glyphicon glyphicon-cog" id="settingsIcon" onclick="window.location.href = 'config.php';"></a>
 
 		</div>

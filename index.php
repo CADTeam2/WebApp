@@ -4,7 +4,7 @@
 $pagetitle = "Login";
 include ("includes/topBar.php");
 ?>
-<h1 class ="title">Attendee Questions to a Speaker</h1>
+<h1 class ="title">Attendee Questions for a Speaker</h1>
 
 <!--- Input box --->
     <div class="container">    
@@ -34,7 +34,7 @@ include ("includes/topBar.php");
                             <div style="margin-top:10px" class="form-group">
                                     <!-- Button -->
                                     <div class="col-sm-12 controls ">
-                                      <a id="btn-login" href="#" class="btn btn-success useButton" onclick="document.getElementById('loginform').submit();">Login  </a>
+                                      <a id="btn-login" href="#" class="btn btn-success useButton" onclick="window.location.href = 'select-room.php';">Login  </a>
                                     </div>
                             </div> 
 								

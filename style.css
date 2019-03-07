@@ -9,7 +9,9 @@ h1{
 	text-align: center;
 }
 
-
+#logo:hover{
+	filter: brightness(80%);
+}
 
 .title{
 	margin-top:2.4vw;
@@ -68,7 +70,10 @@ h1{
 
 }
 
-
+.input-group{
+	text-align: center;
+	margin:auto;
+}
 
 
 #settings {
