@@ -4,6 +4,32 @@
 $pagetitle = "Select Room";
 include ("includes/topBar.php");
 ?>
+
+<script>
+$(document).ready(function() {
+	
+   checkRoomCode = function(){
+	  code = $("#roomCodeInput").val();
+	  if(code!=""){
+			$.ajax({
+				url: "https://cadgroup2.jdrcomputers.co.uk/api/sessions/" + code,
+				dataType: "json"
+			}).done(function (request){
+				$("#details").html("<div id='RDLocation'>"+request.roomName+"</div><div id='RDName'>"+request.speaker+"</div><div id='RDTime'>"+request.startTime+"</div>");
+				//(enable the Join room button)
+			}).fail(function (e){
+				$("#details").html("Room not found");
+			});
+		} else {
+			$("#details").html(" ");
+			//(disable the Join room button)
+		}
+   }
+
+   
+ });
+</script>
+
 <h1 class ="title">Attendee Questions for a Speaker</h1>
 
 <!--- Input box --->
@@ -16,17 +42,17 @@ include ("includes/topBar.php");
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
-     
+
                             <div style="margin-bottom: 25px" class="input-group">
 
-                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Room code"style="text-align: center; width: 300px;">                                        
+                                        <input id="roomCodeInput" type="text" class="form-control" name="username" value="" placeholder="Room code"style="text-align: center; width: 300px;" onkeyup="checkRoomCode()">                                        
                                     </div>
                             
 
                             <!---  Talk details  --->							
-                            <div style="margin-bottom: 25px" class="roomDetails">
+                            <div style="margin-bottom: 25px" class="roomDetails" id="details">
                                 
-								</div>
+							</div>
 
                             <div style="margin-top:10px" class="form-group">
                                     <!-- Button -->
