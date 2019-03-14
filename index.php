@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<head>
- <title>Login</title>
- <!---- Bootstrap stuff ----->
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
-<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-<!--- Our styles to be placed over the top of the bootstrap default ---->
- <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/png" href="ImbroglioDevelopmentThinkingDogClothed.png"/>
-</head>
-
-
-<body>
-<!--- To be replaced with includes --->
-<div class="topBar">
-    <img id="logo" src="ImbroglioDevelopmentThinkingDogClothed.png" onclick="window.location.href = 'http://www.mspaintadventures.com/sweetbroandhellajeff/';" >
-    <a id="settings" class="glyphicon glyphicon-cog" id="settingsIcon" onclick="window.location.href = 'http://example.com/new_url';"></a>
-
-</div>
-<h1 class ="title">Attendee Questions to a Speaker</h1>
+<?php
+//include the header and top bar
+$pagetitle = "Login";
+include ("includes/topBar.php");
+?>
+<h1 class ="title">Attendee Questions for a Speaker</h1>
 
 <!--- Input box --->
     <div class="container">    
@@ -49,7 +34,7 @@
                             <div style="margin-top:10px" class="form-group">
                                     <!-- Button -->
                                     <div class="col-sm-12 controls ">
-                                      <a id="btn-login" href="#" class="btn btn-success useButton" onclick="document.getElementById('loginform').submit();">Login  </a>
+                                      <a id="btn-login" href="#" class="btn btn-success useButton" onclick="window.location.href = 'select-room.php';">Login  </a>
                                     </div>
                             </div> 
 								
@@ -60,5 +45,6 @@
     </div>
 <!--- End of input box --->
 
-</body> 
-</html>
+<?php
+include ("includes/footer.php");
+?>
