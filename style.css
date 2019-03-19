@@ -118,6 +118,14 @@ h1{
 }
 
 .roomDetails{
-	font-size:150%;
+	font-size:180%;
 	text-align:center;
+}
+
+#RDTitle{
+	font-size:100%;
+}
+#RDTime{
+	font-size: 140%;
+	padding-top: 40px;
 }
