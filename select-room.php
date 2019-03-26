@@ -9,13 +9,28 @@ include ("includes/topBar.php");
 $(document).ready(function() {
 	
    checkRoomCode = function(){
-	  code = $("#roomCodeInput").val();
+	  var code = $("#roomCodeInput").val();
 	  if(code!=""){
 			$.ajax({
 				url: "https://cadgroup2.jdrcomputers.co.uk/api/sessions/" + code,
 				dataType: "json"
 			}).done(function (request){
-				$("#details").html("<div id='RDLocation'>"+request.roomName+"</div><div id='RDName'>"+request.speaker+"</div><div id='RDTime'>"+request.startTime+"</div>");
+				var title ="";
+				var speaker ="";
+				var room ="";
+				var time="";
+				if(request.startTime != null && request.endTime != null){
+					var st = request.startTime.split(/[- :]/);
+					var sd = new Date(Date.UTC(st[0], st[1]-1, st[2], st[3], st[4], st[5]));
+					var et = request.endTime.split(/[- :]/);
+					var ed = new Date(Date.UTC(et[0], et[1]-1, et[2], et[3], et[4], et[5]));
+					time = sd.getDate()+"/"+sd.getMonth()+"/"+sd.getFullYear()+" "+ sd.getHours()+":"+sd.getMinutes()+" - "+ed.getHours()+":"+ed.getMinutes();
+					//time = request.startTime.getFullYear();
+				} else {
+					time = "Date and time TBC"
+				}
+				
+				$("#details").html("<div id='RDTitle'>"+request.sessionName+"</div></br><div id='RDName'>"+request.speaker+"</div><div id='RDLocation'>"+request.roomName+"</div><div id='RDTime'>"+time+"</div>");
 				//(enable the Join room button)
 			}).fail(function (e){
 				$("#details").html("Room not found");
