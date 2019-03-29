@@ -91,3 +91,51 @@ h1{
     font-size: 140%;
     padding-top: 40px;
 }
+//div ul{height:50%; width:25%;}
+//div ul{overflow:hidden; overflow-y:scroll;-webkit-overflow-scrolling: touch;}
+.list * {
+  box-sizing: border-box;
+}
+.list ul {
+  position: absolute;
+  width: 40%;
+  height: 90%;
+  overflow: scroll;
+  margin: 0;
+  padding: 0;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  font-family: Arial, sans-serif;  
+  -webkit-overflow-scrolling: touch;
+}
+.list li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+.flip {
+  position: absolute;
+  left: 50%;
+  float: left;
+  padding: 10px;
+}
+.panel p {
+  position: absolute;
+  left: 50%;
+  float: left;
+  padding: 10px;
+}
+.list li {
+  padding: 10px 20px;
+  
+  border-bottom: 1px solid #ccc;
+  
+}
+.flip #t{
+  padding-top: 10px;
+}
+.question {
+  position: absolute;
+  left: 63%;
+  float: left;
+  margin-top: 50px;
+}
