@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-	   <title><?php echo $pagetitle; ?></title>
+        <title><?php echo $pagetitle; ?></title>
         <!-- Bootstrap scripts -->
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
         <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
