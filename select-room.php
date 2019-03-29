@@ -2,7 +2,7 @@
 //check code against db, 
 //include the header and top bar
 $pagetitle = "Select Room";
-include ("includes/topBar.php");
+include ("pageComponents/topBar.php");
 ?>
 
 <script>
@@ -84,5 +84,5 @@ $(document).ready(function() {
 <!--- End of input box --->
 
 <?php
-include ("includes/footer.php");
+include ("pageComponents/footer.php");
 ?>

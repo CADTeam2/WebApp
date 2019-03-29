@@ -2,7 +2,7 @@
 <?php
 //include the header and top bar
 $pagetitle = "Login";
-include ("includes/topBar.php");
+include ("pageComponents/topBar.php");
 ?>
 <h1 class ="title">Attendee Questions for a Speaker</h1>
 
@@ -46,5 +46,5 @@ include ("includes/topBar.php");
 <!--- End of input box --->
 
 <?php
-include ("includes/footer.php");
+include ("pageComponents/footer.php");
 ?>
