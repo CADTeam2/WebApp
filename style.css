@@ -12,6 +12,7 @@ h1{
 .title{
     margin-top:2.4vw;
 }
+/* these styles are for the boxes on the login and room select pages */
 .mainbox{
     border-color:#5C6BC0;
 }
@@ -41,12 +42,17 @@ h1{
 .panel-title{
     color:white;
     font-size:150%;
+	text-align:center;
 }
+
+/* style for the dog logo */
 #logo{
     height: 50px;
     width: 55px;
     padding-left:5px;
 }
+
+
 .input-group{
     text-align: center;
     margin:auto;
@@ -59,9 +65,7 @@ h1{
     padding-bottom:5px;
     color: white;
 }
-.panel-title{
-    text-align:center;
-}
+
 .form-group{
     text-align:center;
 }
@@ -80,6 +84,8 @@ h1{
 .btn-success{
     font-size:130%;
 }
+
+/* style for the room details on select-room screen */
 .roomDetails{
     font-size:180%;
     text-align:center;
@@ -91,6 +97,8 @@ h1{
     font-size: 140%;
     padding-top: 40px;
 }
+
+/* styles for the questions in moderator and speaker screens */
 //div ul{height:50%; width:25%;}
 //div ul{overflow:hidden; overflow-y:scroll;-webkit-overflow-scrolling: touch;}
 .list * {
@@ -151,4 +159,15 @@ h1{
   left: 63%;
   float: left;
   margin-top: 50px;
+}
+/* End of question elements styles */
+
+
+
+/* override the bootstrap colours for the back button */
+#backButton{
+	text-align:center;
+	background-color: #79c6ce;
+	border-color: #528b91;
+	color: black;
 }
