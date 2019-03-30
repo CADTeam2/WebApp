@@ -26,6 +26,7 @@ if(isset($_GET["delete"])) {
 $question = $_GET['updatedq'];
 $priority = $_GET['priority'];
 $questionID = $_GET['user'];
+$sessionID = $_GET['sessionID'];
 $url = "https://cadgroup2.jdrcomputers.co.uk/api/questions/".$questionID;
 $data = array('question'=>$question,'priority'=>$priority);
 $data_json = json_encode($data);
