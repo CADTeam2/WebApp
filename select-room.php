@@ -8,10 +8,10 @@
 <script>
 $(document).ready(function() {
     checkRoomCode = function(){
-    var code = $("#roomCodeInput").val();
-    if(code!=""){
+    var sessionCode = $("#roomCodeInput").val();
+    if(sessionCode!=""){
         $.ajax({
-            url: "https://cadgroup2.jdrcomputers.co.uk/api/sessions/" + code,
+            url: "https://cadgroup2.jdrcomputers.co.uk/api/sessions/" + sessionCode,
             dataType: "json"
         }).done(function (request){
             var title ="";
@@ -38,13 +38,19 @@ $(document).ready(function() {
                     +"</div><div id='RDTime'>"
                     +time
                     +"</div>");
-            //(enable the Join room button)
+				$("#btn-login").attr("href", "moderator.php?sessionID="+sessionCode); //set the Join Room button to link to the correct session
+				$("#btn-login").css({"background-color": "#5cb85c", "border-color": "#4cae4c", "color": "white"});
+            
             }).fail(function (e){
                 $("#details").html("Room not found");
+				$("#btn-login").attr("href", "");
+				$("#btn-login").css({"background-color": "#a7a8aa", "border-color": "#9b9999", "color": "#eae5e5"});
             });
         } else {
             $("#details").html(" ");
             //(disable the Join room button)
+			$("#btn-login").attr("href", "");
+			$("#btn-login").css({"background-color": "#a7a8aa", "border-color": "#9b9999", "color": "#eae5e5"});
         }
     }
 });
@@ -69,7 +75,7 @@ $(document).ready(function() {
                 <div style="margin-top:10px" class="form-group">
                     <!-- Button -->
                     <div class="col-sm-12 controls ">
-                        <a id="btn-login" href="#" class="btn btn-success useButton" onclick="//dostuff">Join room  </a>
+                        <a id="btn-login" href="select-room.php" class="btn btn-success useButton" style="background-color:#a7a8aa; border-color:#9b9999; color:#eae5e5;">Join room  </a>
                     </div>
                 </div>
             </div>
@@ -81,3 +87,10 @@ $(document).ready(function() {
 <?php
     include ("pageComponents/footer.php");
 ?>
+
+<!--#a7a8aa background -->
+<!--#9b9999 border-->
+<!--#eae5e5 text -->
+
+<!--background #5cb85c-->
+<!--border #4cae4c-->
