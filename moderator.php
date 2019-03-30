@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <title>Questions</title>
-    </head>
-    <body>
+<?php
+    //include the header and top bar
+    $pagetitle = "Questions";
+    include ("pageComponents/topBar.php");
+?>
         <h1>Header</h1>
         <div class="list">
           <?php
