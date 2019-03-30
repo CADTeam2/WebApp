@@ -68,7 +68,7 @@ $(document).ready(function() {
             </div>
             <div style="padding-top:30px" class="panel-body" >
                 <div style="margin-bottom: 25px" class="input-group">
-                    <input id="roomCodeInput" type="text" class="form-control" name="username" value="" placeholder="Room code"style="text-align: center; width: 300px;" onkeyup="checkRoomCode()">
+                    <input id="roomCodeInput" type="text" class="form-control" name="username" value="" placeholder="Room code"style="text-align: center; width: 300px;" onkeyup="checkRoomCode()" onchange="checkRoomCode()">
                 </div>
                 <!-- Talk details -->
                 <div style="margin-bottom: 25px" class="roomDetails" id="details"></div>
