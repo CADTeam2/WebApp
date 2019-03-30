@@ -98,9 +98,31 @@ h1{
     padding-top: 40px;
 }
 
+
+
+#sessionName {
+	padding-bottom: 10px;
+}
+
+
+#optionsButtons{
+  position: relative;
+  bottom: 50px;	
+}
+#optionsButtons *{
+	background-color: #79c6ce;
+	border-color: #528b91;
+	color: black;
+	margin-right: 10px;
+}
 /* styles for the questions in moderator and speaker screens */
 //div ul{height:50%; width:25%;}
 //div ul{overflow:hidden; overflow-y:scroll;-webkit-overflow-scrolling: touch;}
+#selections {
+  position: relative;
+  bottom: 65px;	
+  height: 75vh;  
+}
 .list * {
   box-sizing: border-box;
 }
@@ -132,7 +154,7 @@ h1{
   padding: 10px 20px;
   border-bottom: 1px solid #ccc;
 }
-.submissionblock {
+.submissionBlock {
   position: absolute;
   left: 50%;
   float: left;
@@ -150,7 +172,7 @@ h1{
   border-bottom: 1px solid #ccc;
   
 }
-.submissionblock #updatedq{
+.submissionBlock #updatedq{
   padding-top: 10px;
   resize: none;
 }
