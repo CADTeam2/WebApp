@@ -23,7 +23,7 @@
         <!--/list-->
         <div class="flip">
             <button type="button" onclick="myFunction()">Refresh</button>
-            <textarea id="demo" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>This is a question maaaaaaaaate</textarea>
+            <textarea style="font-size: 35px;" rows="10%" cols="40%" id="demo" readonly="true" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>Please select a question</textarea>
         </div>
         <script type="text/javascript">
             $('#selections li').click(function() {
