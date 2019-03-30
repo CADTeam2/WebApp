@@ -38,6 +38,7 @@
 					<option value="3">3</option>
 					<option value="4">4</option>
 				</select>
+				<textarea type="text" name="sessionID" id="questionID" style="display: none;"><?php echo "$sessionID"; ?></textarea>
              <input type="submit" name="submission"  value="Submit!" onclick="if(confirm('Are you sure you want to submit this question?')) return true; return false;">
 			<input type="submit" name="delete" id="y" value="Delete Question!" onclick="if(confirm('Are you sure you want to delete this question?')) return true; return false;">
 		</form>
@@ -55,17 +56,7 @@
 	  function Refresh() {
 		  window.location.reload(true);
 	  }
-	  
-	  function confirmation() {
-          var r = confirm("Are you sure you want to submit the question?");
-		  if (r== true) {
-			  return true;
-		  } else {
-			  return false;
-		  }
-		  
-
-	  }
+	  0
 	  
 	</script>
     </body>
