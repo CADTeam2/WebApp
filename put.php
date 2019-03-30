@@ -4,6 +4,7 @@ if(isset($_GET["submission"])) {
 $question = $_GET['updatedq'];
 $priority = $_GET['priority'];
 $questionID = $_GET['user'];
+$sessionID = $_GET['sessionID'];
 
 
 $url = "https://cadgroup2.jdrcomputers.co.uk/api/questions/".$questionID;
