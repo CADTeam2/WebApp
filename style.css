@@ -112,7 +112,7 @@ h1{
   padding: 10px 20px;
   border-bottom: 1px solid #ccc;
 }
-.flip {
+.submissionblock {
   position: absolute;
   left: 50%;
   float: left;
@@ -130,8 +130,9 @@ h1{
   border-bottom: 1px solid #ccc;
   
 }
-.flip #t{
+.submissionblock #updatedq{
   padding-top: 10px;
+  resize: none;
 }
 .question {
   position: absolute;
