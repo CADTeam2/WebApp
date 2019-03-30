@@ -2,17 +2,22 @@
     //include the header and top bar
     $pagetitle = "Questions";
     include ("pageComponents/topBar.php");
+	$head = $_GET['sessionID'];
+	echo '<h1>Room Number: '.$head.'</h1>';
 ?>
-        <h1>Header</h1>
         <div class="list">
           <?php
 	    $sessionID = $_GET['sessionID'];
 	    $url = "https://cadgroup2.jdrcomputers.co.uk/api/questions/session/{$sessionID}";
-            $jsondata = file_get_contents($url);
+        $jsondata = file_get_contents($url);
 	    $json = json_decode($jsondata, true);
-            $output = '<ul id="selections">';
+        $output = '<ul id="selections">';
 	    foreach($json as $question) {
-                $output .= "<li>".$question['userID'].": ".$question['question']."<div style='display: none;'>".'-'.$question['questionID']."</div></li>";
+				$id = $question['userID'];
+				$users = "https://cadgroup2.jdrcomputers.co.uk/api/users/{$id}";
+				$userdata = file_get_contents($users);
+				$userjson = json_decode($userdata, true);
+                $output .= "<li>".$userjson['username'].": ".$question['question']."<div style='display: none;'>".'-'.$question['questionID']."</div></li>";
             }
             $output .= "</ul>";
 	    echo $output;
@@ -30,6 +35,7 @@
 	</div>
 	<input type="checkbox" id="questionAllow" name="questionsOnOff" value="Submit"/>
 		<form action="put.php" method="get">
+			<textarea readonly type="text" name="userName" id="uName">Username</textarea>
             <textarea type="text" name="updatedq" id="updateq" rows="10" cols="65" maxlength="250">On click questions will appear here... In this box...</textarea>
 			<textarea type="text" name="user" id="question" rows="1" cols="5">question id will appear here</textarea>
 				<select name="priority" type="text">
@@ -47,9 +53,11 @@
 	<script type="text/javascript">
 	  $('#selections li').click(function() {
 		var question = $(this).text();
+		var username = question.split(':')[0];
 		var nQuestion = question.split(':')[1];
 		var compQuestion = nQuestion.split('-')[0];
 		var questionIdentification = nQuestion.split('-')[1]
+		$('#uName').html(username.trim());
 	    $('#updateq').html(compQuestion.trim());
 		$('#question').html(questionIdentification);
 	  });
