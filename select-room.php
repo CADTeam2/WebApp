@@ -36,29 +36,9 @@ $(document).ready(function() {
 			//if the date and time have both been set, convert the start and end date/times into a more aesthetic string
             if(request.startTime != null && request.endTime != null){
                 var st = request.startTime.split(/[- :]/);
-                var sd = new Date(Date.UTC(st[0], st[1]-1, st[2], st[3], st[4], st[5]));
-
-                var et = request.endTime.split(/[- :]/);
-                var ed = new Date(Date.UTC(et[0], et[1]-1, et[2], et[3], et[4], et[5]));
-				//format the minutes and hours so that they don't lose their 0s
-                var startHour = sd.getHours();
-				var startMinute = sd.getMinutes();
-				var endHour = sd.getHours();
-				var endMinute = sd.getMinutes();
-				if(parseInt(startHour) < 9){
-					startHour = "0" + startHour;
-				}
-				if(parseInt(startMinute) < 9){
-					startMinute = "0" + startMinute;
-				}
-				if(parseInt(endHour) < 9){
-					endHour = "0" + endHour;
-				}
-				if(parseInt(endMinute) < 9){
-					endMinute = "0" + endMinute;
-				}
+                var et = request.endTime.split(/[- :]/);				
 				//set the date and start and end times as a string to spit onto the box
-                time = sd.getDate()+"/"+sd.getMonth()+"/"+sd.getFullYear()+" "+ startHour+":"+startMinute+" - "+endHour+":"+endMinute;
+                time = st[1]+"/"+st[2]+"/"+st[0]+" "+ st[3]+":"+st[4]+" - "+et[3]+":"+et[4];
             } else {
                 time = "Date and time TBC"
             }
