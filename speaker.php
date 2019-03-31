@@ -31,7 +31,7 @@
 				}
             }
 			sort($questions);
-			echo '<ul id="selections">';
+			echo '<ul id="vetted">';
 			foreach($questions as $ques) {
 				$quest = "".$ques;
 				$q = substr($quest, 1);
@@ -60,7 +60,7 @@
 			
         </div>
         <script type="text/javascript">
-            $('#selections li').click(function() {
+            $('#vetted li').click(function() {
 				var question = $(this).text();
 				var compQuestion = question.split('-')[0];
 				var questionIdentification = question.split('-')[1]
