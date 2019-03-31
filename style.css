@@ -1,14 +1,13 @@
 body{
     background-color:#9FA8DA;
     font-family:sans-serif;
+
 }
 h1{
     color: white;
     text-align: center;
 }
-#logo:hover{
-    filter: brightness(80%);
-}
+
 .title{
     margin-top:2.4vw;
 }
@@ -50,6 +49,12 @@ h1{
     height: 50px;
     width: 55px;
     padding-left:5px;
+}
+#logo:hover{
+    filter: brightness(80%);
+}
+#logo:active{
+    filter: brightness(50%);
 }
 
 
@@ -169,6 +174,12 @@ h1{
   
   top: 20vh;
 
+}
+
+
+.list-group-item{
+	background-color: #e8eaf6;
+	border-color: #5c6bc0;
 }
 
 .submissionblock *{
