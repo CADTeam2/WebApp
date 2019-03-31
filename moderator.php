@@ -17,12 +17,37 @@
 	$allowQuest = $nameJson['acceptingQuestions'];
 	$date = date('Y-m-d H:i:s');
 	$x = explode(' ', $date);
+
+	echo "
+	<script>
+	    	$(document).ready(function() {
+		var sessionCode = $head;
+		toggleEnable = function(){
+			$.ajax({
+				url: 'https://cadgroup2.jdrcomputers.co.uk/api/sessions/' + $head,
+				dataType: 'json'
+			}).done(function (request){
+				if(request.acceptingQuestions == 1){
+					$('#acceptButton').attr('value', 'Disable questions');
+					$('#acceptButton').css({'background-color': '#e83e3e', 'border-color': '#a52b2b'});
+
+				} else if (request.acceptingQuestions == 0){
+					$('#acceptButton').attr('value', 'Enable questions');
+					$('#acceptButton').css({'background-color': '#1dba68', 'border-color': '#258265'});
+				}
+			});
+			} 
+		 toggleEnable();
+		}); 
+	</script>
+		 "
 ?>
 <!--Refresh Button and speaker button-->
 	
-<div id="optionsButtons" style="padding-left: 10px; padding-bottom: 30px;">
+<div id="optionsButtons">
 	<div  id="refreshButton"  class="btn btn-success useButton" onclick="return Refresh();" style="padding: 7px;">Refresh</div>
 	<div  id="speakerButton"  class="btn btn-success useButton" onclick="window.location.href = 'speaker.php?sessionID=<?php echo "$sessionID"; ?>'" style="padding: 7px;">Go to Speaker</div>
+	<div><p>Time since last refresh: <time datetime='<?php echo "$x[0]"; ?>T<?php echo "$x[1]"; ?>' ></time></p></div>
 </div>
 <div class="list">
 
@@ -39,23 +64,23 @@
 		echo $output;
 	?>
 </div>
-<p>Time since last refresh: <time datetime='<?php echo "$x[0]"; ?>T<?php echo "$x[1]"; ?>' ></time></p>
+
 
 <div class="submissionBlock">
 
 
 	<!--<input type="checkbox" id="questionAllow" name="questionsOnOff" value="Submit"/>-->
 	<form action="put.php" method="get">
-		<div style="display:inline;">
-			<h3>Accept Questions?</h3>
-			<input type="submit" class="btn btn-success acceptButton" name="enable" value="Enable!"onclick="" style="padding: 7px;">
+		<div id= "accepting">
+			<input type="submit" id="acceptButton"class="btn btn-success acceptButton" name="enable" value="Enable questions"onclick="" style="padding: 7px;">
 		</div>
-        <textarea type="text" name="updatedq" id="updateq" class="form-control" rows="10" cols="65" maxlength="250">On click questions will appear here... In this box...</textarea>
+		<textarea readonly type="text" class="form-control" rows="1" cols="1" name="userName" id="uName" >Username</textarea>
+        <textarea type="text" name="updatedq" id="updateq" class="form-control" rows="5" cols="65" maxlength="250">On click questions will appear here... In this box...</textarea>
 		<!-- submit, delete and modify priority stuff -->
-		<h4>Set Question Priority</h4>
+		<h4>Set Question Priority - 1 is highest</h4>
 		<div id="modifyOptions" style="">
-			<input type="submit" class="btn btn-success" name="submission" id="submitBtn" value="Submit!" onclick="if(confirm('Are you sure you want to submit this question?')) return true; return false;">
-			<input type="submit" class="btn btn-success" name="delete" id="deleteBtn" value="Delete Question!" onclick="if(confirm('Are you sure you want to delete this question?')) return true; return false;">
+			<input type="submit" class="btn btn-success" name="submission" id="submitBtn" value="Submit" onclick="if(confirm('Are you sure you want to submit this question?')) return true; return false;">
+			<input type="submit" class="btn btn-success" name="delete" id="deleteBtn" value="Delete Question" onclick="if(confirm('Are you sure you want to delete this question?')) return true; return false;">
 			<div class="col-xs-2 col-ys-1">
 				<select name="priority" type="text" class="form-control" >
 					<option value="4">4</option>
@@ -67,7 +92,6 @@
 		</div>
 		<!-- end of modifyOptions -->
 		<br>
-		<textarea readonly type="text" name="userName" id="uName" style="display: none">Username</textarea>
 		<textarea type="text" name="enableQuest" id="enableQues" style="display: none;"><?php echo "$allowQuest"; ?></textarea>
 		<textarea type="text" name="sessionID" id="questionID" style="display: none;"><?php echo "$sessionID"; ?></textarea>
 		<textarea type="text" name="user" id="question" rows="1" cols="5" style="display: none">question id will appear here</textarea>
