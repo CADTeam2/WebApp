@@ -27,7 +27,7 @@
                     <div style="margin-top:10px" class="form-group">
                         <!-- Button -->
                         <div class="col-sm-12 controls ">
-                            <a id="btn-login" href="#" class="btn btn-success useButton" onclick="window.location.href = 'select-room.php';">Login</a>
+                            <a id="btn-login" href="#" class="btn btn-success" onclick="window.location.href = 'select-room.php';" style="padding-left:50px; padding-right:50px; padding-top:10px; padding-bottom:10px;">Login</a>
                         </div>
                     </div>
                 </form>
