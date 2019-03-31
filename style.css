@@ -138,10 +138,15 @@ h1{
 //div ul{height:50%; width:25%;}
 //div ul{overflow:hidden; overflow-y:scroll;-webkit-overflow-scrolling: touch;}
 #selections {
+	width: 60vw;
   position: relative;
   bottom: 65px;	
   height: 75vh;  
 }
+.list {
+	width: 60vw;
+}
+
 .list * {
   box-sizing: border-box;
 }
@@ -183,7 +188,7 @@ h1{
 }
 .submissionBlock {
   position: fixed;
-  right: 10vw;
+  right: 1vw;
   
   top: 20vh;
 

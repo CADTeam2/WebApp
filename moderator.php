@@ -81,7 +81,7 @@
 		<div id="modifyOptions" style="">
 			<input type="submit" class="btn btn-success" name="submission" id="submitBtn" value="Submit" onclick="if(confirm('Are you sure you want to submit this question?')) return true; return false;">
 			<input type="submit" class="btn btn-success" name="delete" id="deleteBtn" value="Delete Question" onclick="if(confirm('Are you sure you want to delete this question?')) return true; return false;">
-			<div class="col-xs-2 col-ys-1">
+			<div class="col-xs-3 col-ys-1">
 				<select name="priority" type="text" class="form-control" >
 					<option value="4">4</option>
 					<option value="3">3</option>
