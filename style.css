@@ -77,6 +77,13 @@ h1{
     padding-right:50px;
     padding-top: 10px;
     padding-bottom:10px;
+	background-color: #79c6ce;
+	border-color: #528b91;
+	color: black;
+}
+.useButton:hover{
+	background-color: #85dce5;
+	color: black;
 }
 .container{
     margin-top:5vw;
@@ -98,9 +105,32 @@ h1{
     padding-top: 40px;
 }
 
-/* styles for the questions in moderator and speaker screens */
+
+
+#sessionName {
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+
+#optionsButtons{
+  position: relative;
+  bottom: 50px;	
+}
+#optionsButtons *{
+	/*background-color: #79c6ce;
+	border-color: #528b91;
+	color: black; */
+	margin-right: 10px;
+}
+/* styles for question lists */
 //div ul{height:50%; width:25%;}
 //div ul{overflow:hidden; overflow-y:scroll;-webkit-overflow-scrolling: touch;}
+#selections {
+  position: relative;
+  bottom: 65px;	
+  height: 75vh;  
+}
 .list * {
   box-sizing: border-box;
 }
@@ -111,7 +141,7 @@ h1{
   overflow: scroll;
   margin: 0;
   padding: 0;
-  border: 2px solid #ccc;
+
   font-size: 16px;
   font-family: Arial, sans-serif;  
   -webkit-overflow-scrolling: touch;
@@ -123,42 +153,77 @@ h1{
   overflow: scroll;
   margin: 0;
   padding: 0;
-  border: 2px solid #ccc;
+
   font-size: 16px;
   font-family: Arial, sans-serif;  
   -webkit-overflow-scrolling: touch;
 }
 .list li {
   padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #5C6BC0;
+  
 }
-.submissionblock {
-  position: absolute;
-  left: 50%;
-  float: left;
-  padding: 10px;
+.submissionBlock {
+  position: fixed;
+  right: 10vw;
+  
+  top: 20vh;
+
 }
+
+.submissionblock *{
+
+}
+/* end of question list styles */
+
+
+/* submit and delete buttons */
+
+
+
+#submitBtn {
+	background-color: #1dba68;
+	border-color: #258265;
+}
+#submitBtn:hover{
+	background-color: #15a55a;
+}
+#deleteBtn {
+	background-color: #e83e3e;
+	border-color: #a52b2b
+}
+#deleteBtn:hover{
+	background-color: #cc0404;
+}
+
+
+
+
+
 .panel p {
   position: absolute;
   left: 50%;
   float: left;
   padding: 10px;
 }
-.list li {
-  padding: 10px 20px;
-  
-  border-bottom: 1px solid #ccc;
-  
-}
-.submissionblock #updatedq{
+
+.submissionBlock #updatedq{
   padding-top: 10px;
-  resize: none;
+  
 }
+textarea{
+	resize: none;
+}
+
 .question {
   position: absolute;
   left: 63%;
   float: left;
   margin-top: 50px;
+}
+
+.form-control{
+	resize: none;
 }
 /* End of question elements styles */
 
