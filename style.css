@@ -121,12 +121,18 @@ h1{
 #optionsButtons{
   position: relative;
   bottom: 50px;	
+  padding-left: 10px; 
+  padding-bottom: 30px; 
+  padding-top: 30px;
+  display: inline-block;  
 }
 #optionsButtons *{
 	/*background-color: #79c6ce;
 	border-color: #528b91;
 	color: black; */
 	margin-right: 10px;
+	display: inline-block;
+
 }
 /* styles for question lists */
 //div ul{height:50%; width:25%;}
@@ -168,6 +174,13 @@ h1{
   border-bottom: 1px solid #5C6BC0;
   
 }
+.skinnyList ul{
+	width: 30%
+}
+
+.skinnyList ol{
+	width: 30%
+}
 .submissionBlock {
   position: fixed;
   right: 10vw;
@@ -175,6 +188,13 @@ h1{
   top: 20vh;
 
 }
+.viewBlock{
+	position: fixed;
+	top: 30vh;
+	right: 8vw;
+	
+}
+
 
 
 .list-group-item{
@@ -182,10 +202,15 @@ h1{
 	border-color: #5c6bc0;
 }
 
-.submissionblock *{
-
+.submissionblock {
+    width: 20vw;
 }
 /* end of question list styles */
+
+#accepting{
+	
+}
+
 
 
 /* submit and delete buttons */
