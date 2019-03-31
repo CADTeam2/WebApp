@@ -15,13 +15,17 @@
 	//$roomTitle = json_decode(file_get_contents("https://cadgroup2.jdrcomputers.co.uk/api/sessions/{$sessionID}"), true)
 	echo '<h1 id="sessionName">'.$nameJson['sessionName'].'</h1>';
 	$allowQuest = $nameJson['acceptingQuestions'];
+	$date = date('Y-m-d H:i:s');
+	$x = explode(' ', $date);
 ?>
-	<!--Refresh Button and speaker button-->
+<!--Refresh Button and speaker button-->
+	
 <div id="optionsButtons" style="padding-left: 10px; padding-bottom: 30px;">
 	<div  id="refreshButton"  class="btn btn-success useButton" onclick="return Refresh();" style="padding: 7px;">Refresh</div>
 	<div  id="speakerButton"  class="btn btn-success useButton" onclick="window.location.href = 'speaker.php?sessionID=<?php echo "$sessionID"; ?>'" style="padding: 7px;">Go to Speaker</div>
 </div>
 <div class="list">
+
     <?php
 		$output = '<ul id="selections" class="list-group">';
 		foreach($json as $question) {
@@ -35,6 +39,7 @@
 		echo $output;
 	?>
 </div>
+<p>Time since last refresh: <time datetime='<?php echo "$x[0]"; ?>T<?php echo "$x[1]"; ?>' ></time></p>
 
 <div class="submissionBlock">
 
@@ -70,6 +75,7 @@
 	</form>
 
 </div>
+	<script src="jquery.timeago.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	  $('#selections li').click(function() {
 		var question = $(this).text();
@@ -84,7 +90,8 @@
 	  function Refresh() {
 		  window.location.reload(true);
 	  }
-	  
+	  $('time').timeago();
+
 	  
 	</script>
 </body>
