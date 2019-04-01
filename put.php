@@ -1,5 +1,6 @@
 <?php
 
+//Sets the editted question and priority.
 if(isset($_GET["submission"])) {
 $question = $_GET['updatedq'];
 $priority = $_GET['priority'];
@@ -22,6 +23,7 @@ header("Location: moderator.php?submission=success&sessionID={$sessionID}");
 exit();
 }
 
+//Deletes a question.
 if(isset($_GET["delete"])) {
 $question = $_GET['updatedq'];
 $priority = $_GET['priority'];
@@ -43,7 +45,7 @@ header("Location: moderator.php?submission=success&sessionID={$sessionID}");
 exit();
 }
 
-
+// deletes a question from the speaker screen.
 if(isset($_GET["complete"])) {
 $question = $_GET['updatedq'];
 $priority = $_GET['priority'];

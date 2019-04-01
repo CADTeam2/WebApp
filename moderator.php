@@ -58,7 +58,9 @@
 			$users = "https://cadgroup2.jdrcomputers.co.uk/api/users/{$id}";
 			$userdata = file_get_contents($users);
 			$userjson = json_decode($userdata, true);
-			$output .= "<li class='list-group-item'>".$userjson['username'].": ".$question['question']."<div style='display: none;'>".'-'.$question['questionID']."</div></li>";
+			if ($question['priority'] == 0) {
+				$output .= "<li class='list-group-item'>".$userjson['username'].": ".$question['question']."<div style='display: none;'>".'-'.$question['questionID']."</div></li>";
+			}
 		}
 		$output .= "</ul>";
 		echo $output;
